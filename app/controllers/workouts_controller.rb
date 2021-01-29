@@ -64,6 +64,8 @@ class WorkoutsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def workout_params
-      params.fetch(:workout, {})
+      params.require(:workout).permit(:calorie)
     end
 end
+
+
