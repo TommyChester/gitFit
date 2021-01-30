@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class WorkoutsController < ApplicationController
-  before_action :set_workout, only: %i[ show edit update destroy ]
+  before_action :set_workout, only: %i[show edit update destroy]
 
   # GET /workouts or /workouts.json
   def index
@@ -7,8 +9,7 @@ class WorkoutsController < ApplicationController
   end
 
   # GET /workouts/1 or /workouts/1.json
-  def show
-  end
+  def show; end
 
   # GET /workouts/new
   def new
@@ -16,8 +17,7 @@ class WorkoutsController < ApplicationController
   end
 
   # GET /workouts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /workouts or /workouts.json
   def create
@@ -25,7 +25,7 @@ class WorkoutsController < ApplicationController
 
     respond_to do |format|
       if @workout.save
-        format.html { redirect_to @workout, notice: "Workout was successfully created." }
+        format.html { redirect_to @workout, notice: 'Workout was successfully created.' }
         format.json { render :show, status: :created, location: @workout }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class WorkoutsController < ApplicationController
   def update
     respond_to do |format|
       if @workout.update(workout_params)
-        format.html { redirect_to @workout, notice: "Workout was successfully updated." }
+        format.html { redirect_to @workout, notice: 'Workout was successfully updated.' }
         format.json { render :show, status: :ok, location: @workout }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,21 +51,20 @@ class WorkoutsController < ApplicationController
   def destroy
     @workout.destroy
     respond_to do |format|
-      format.html { redirect_to workouts_url, notice: "Workout was successfully destroyed." }
+      format.html { redirect_to workouts_url, notice: 'Workout was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_workout
-      @workout = Workout.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def workout_params
-      params.require(:workout).permit(:calories)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_workout
+    @workout = Workout.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def workout_params
+    params.require(:workout).permit(:calories)
+  end
 end
-
-
