@@ -1,0 +1,2 @@
+class BloodSugarLevel < ApplicationRecord
+end

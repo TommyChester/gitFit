@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blood Sugar Levels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Occurred at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blood_sugar_levels.each do |blood_sugar_level| %>
+      <tr>
+        <td><%= blood_sugar_level.value %></td>
+        <td><%= blood_sugar_level.occurred_at %></td>
+        <td><%= link_to 'Show', blood_sugar_level %></td>
+        <td><%= link_to 'Edit', edit_blood_sugar_level_path(blood_sugar_level) %></td>
+        <td><%= link_to 'Destroy', blood_sugar_level, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blood Sugar Level', new_blood_sugar_level_path %>

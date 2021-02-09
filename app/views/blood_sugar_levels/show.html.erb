@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @blood_sugar_level.value %>
+</p>
+
+<p>
+  <strong>Occurred at:</strong>
+  <%= @blood_sugar_level.occurred_at %>
+</p>
+
+<%= link_to 'Edit', edit_blood_sugar_level_path(@blood_sugar_level) %> |
+<%= link_to 'Back', blood_sugar_levels_path %>
