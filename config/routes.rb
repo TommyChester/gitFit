@@ -3,8 +3,6 @@
 Rails.application.routes.draw do
   resources :blood_sugar_levels
   resources :workouts
-
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
