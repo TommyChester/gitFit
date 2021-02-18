@@ -1,0 +1,2 @@
+module GymRatsHelper
+end

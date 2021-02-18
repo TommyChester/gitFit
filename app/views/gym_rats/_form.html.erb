@@ -1,0 +1,26 @@
+<%= form_with(model: gym_rat) do |form| %>
+  <% if gym_rat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gym_rat.errors.count, "error") %> prohibited this gym_rat from being saved:</h2>
+
+      <ul>
+        <% gym_rat.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+
+    <%= form.label :password_confirmation, "Confirmation" %>
+    <%= form.password_field :password_confirmation %>
+    <%= form.submit %>
+  </div>
+<% end %>

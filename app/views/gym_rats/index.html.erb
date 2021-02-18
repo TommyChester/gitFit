@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gym Rats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gym_rats.each do |gym_rat| %>
+      <tr>
+        <td><%= link_to 'Show', gym_rat.name %></td>
+        <td><%= gym_rat.email %></td>
+        <td><%= link_to 'Edit', edit_gym_rat_path(gym_rat) %></td>
+        <td><%= link_to 'Destroy', gym_rat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gym Rat', new_gym_rat_path %>
